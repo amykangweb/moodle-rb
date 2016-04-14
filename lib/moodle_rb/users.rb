@@ -52,6 +52,24 @@ module MoodleRb
       response.parsed_response['users'] && response.parsed_response['users'].first
     end
 
+    def find(column, value)
+      response = self.class.post(
+        '/webservice/rest/server.php',
+        {
+          :query => query_hash('core_user_get_users_by_field', token),
+          :body => {
+            :criteria => {
+              '0' => {
+                :key => column,
+                :value => value
+              }
+            }
+          }
+        }
+      )
+      response.parsed_response['users'] && response.parsed_response['users'].first
+    end
+
     def destroy(id)
       response = self.class.post(
         '/webservice/rest/server.php',
