@@ -56,7 +56,7 @@ module MoodleRb
       response = self.class.post(
         '/webservice/rest/server.php',
         {
-          :query => query_hash('core_user_get_users_by_field', token),
+          :query => query_hash('core_user_get_users', token),
           :body => {
             :criteria => {
               '0' => {
