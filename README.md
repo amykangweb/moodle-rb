@@ -104,6 +104,11 @@ Show a user
 moodle.users.show(user_id)
 ```
 
+Find a user with key and value
+```
+moodle.users.find(key, value)
+```
+
 Delete a user
 ```
 moodle.users.destroy(user_id)
